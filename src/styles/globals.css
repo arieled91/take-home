@@ -2,4 +2,17 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-base);
+  background-color: var(--bg-color);
+}
+
+:root {
+  --text-base: #313334;
+  --text-light: #808080;
+  --border-radius: 0.3rem;
+  --border-normal: #eaeaea;
+  --border-light: #ececec;
+  --bg-color: #ffffff;
+  --shadow-normal: rgba(0, 0, 0, 0.2);
+  --shadow-strong: rgba(0, 0, 0, 0.4);
 }
