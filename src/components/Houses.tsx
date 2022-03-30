@@ -28,7 +28,10 @@ const Houses = ({ houses, loading = false }: Props) => (
           </Description>
         </HouseItem>
       ))}
-      {loading && [...Array(4)].map((e, i) => <Skeleton key={i} />)}
+      {loading &&
+        [...Array(4)].map((e, i) => (
+          <Skeleton data-testid="skeleton" key={i} />
+        ))}
     </HouseList>
   </div>
 );

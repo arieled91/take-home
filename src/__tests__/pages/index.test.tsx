@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Page from "@/pages";
+import Page from "@/pages/index";
 
 beforeEach(() => {
   // IntersectionObserver isn't available in test environment

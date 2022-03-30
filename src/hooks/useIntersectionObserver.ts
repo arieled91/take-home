@@ -12,7 +12,7 @@ const useIntersectionObserver = (
     // timeout avoids overloading the backend if an error occurs
     let timeout: ReturnType<typeof setTimeout>;
 
-    const onIntersect: IntersectionObserverCallback = (entries) => {
+    const onIntersection: IntersectionObserverCallback = (entries) => {
       const first = entries[0];
       if (first.isIntersecting) {
         timeout = setTimeout(() => {
@@ -21,7 +21,7 @@ const useIntersectionObserver = (
       }
     };
 
-    intersectionObserver.current = new IntersectionObserver(onIntersect, {
+    intersectionObserver.current = new IntersectionObserver(onIntersection, {
       root: null,
       rootMargin: `${screen.height / 3}px`, // triggers just before reaching the bottom
       threshold: 0,
