@@ -11,17 +11,17 @@ axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });
 
 const fetchHouses = async (page: number) => {
   const response = await axios.get<HousesResponse>(endpoints.houses, {
-    params: { page, per_page: 16 },
+    params: { page, per_page: 24 },
   });
   return response.data.houses;
 };
 
 const Page: PageWithLayout = () => {
-  const { loaderRef, items: houses } = useInfiniteScroll(fetchHouses);
+  const { loaderRef, items: houses, fetching } = useInfiniteScroll(fetchHouses);
 
   return (
     <div>
-      <Houses houses={houses} />
+      <Houses houses={houses} loading={fetching} />
       <div ref={loaderRef} />
     </div>
   );

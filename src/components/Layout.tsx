@@ -28,7 +28,6 @@ const Layout = ({ children }: Props) => (
 const Main = styled.main`
   max-width: 1400px;
   margin: 90px auto;
-  background-color: var(--bg-color);
 
   @media (${device.md}) {
     padding: 1rem;

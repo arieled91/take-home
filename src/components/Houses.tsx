@@ -1,14 +1,15 @@
 import Image from "next/image";
 import { currency } from "../helpers/formatter";
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { House } from "../model/house";
 import device from "../helpers/device";
 
 type Props = {
   houses: House[];
+  loading?: boolean;
 };
 
-const Houses = ({ houses }: Props) => (
+const Houses = ({ houses, loading = false }: Props) => (
   <div>
     <HouseList>
       {houses?.map((house) => (
@@ -27,6 +28,7 @@ const Houses = ({ houses }: Props) => (
           </Description>
         </HouseItem>
       ))}
+      {loading && [...Array(4)].map((e, i) => <Skeleton key={i} />)}
     </HouseList>
   </div>
 );
@@ -83,6 +85,19 @@ const Price = styled.p`
 
 const Description = styled.div`
   padding: 1rem;
+`;
+
+const breatheAnimation = keyframes`
+ 0% { opacity: 100% }
+ 50% { opacity: 50% }
+ 100% { opacity: 100% }
+`;
+
+const Skeleton = styled.div`
+  height: 320px;
+  width: 320px;
+  background-color: #cecece;
+  animation: ${breatheAnimation} 1.3s infinite;
 `;
 
 export default Houses;

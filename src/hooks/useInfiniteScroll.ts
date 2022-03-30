@@ -17,15 +17,17 @@ const useInfiniteScroll = <Item>(
   const isMounted = useMounted();
 
   useEffect(() => {
+    const addItems = (newItems: Item[]) => {
+      if (isMounted()) {
+        setItems((prevItems) => [...prevItems, ...newItems]);
+        setPages((prevPages) => [...prevPages, currentPage]);
+      }
+    };
+
     if (!pages.includes(currentPage)) {
       setFetching(true);
       fetchCallback(currentPage)
-        .then((newItems) => {
-          if (isMounted()) {
-            setItems((prevItems) => [...prevItems, ...newItems]);
-            setPages((prevPages) => [...prevPages, currentPage]);
-          }
-        })
+        .then(addItems)
         .catch((e) => console.error(e))
         .finally(() => isMounted() && setFetching(false));
     }
