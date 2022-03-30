@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import device from "../helpers/device";
 import Image from "next/image";
-import appLogo from "../../public/logo.png";
+import appLogo from "@/public/logo.png";
 
 type Props = {
   children: React.ReactNode;

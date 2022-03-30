@@ -1,10 +1,10 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
-import useInfiniteScroll from "hooks/useInfiniteScroll";
-import { HousesResponse } from "model/house";
+import useInfiniteScroll from "@/hooks/useInfiniteScroll";
+import { HousesResponse } from "@/model/house";
 import endpoints from "../helpers/endpoints";
 import Layout from "../components/Layout";
-import { PageWithLayout } from "../model/app";
+import { PageWithLayout } from "@/model/app";
 import Houses from "../components/Houses";
 
 axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });

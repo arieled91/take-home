@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { currency } from "../helpers/formatter";
+import { currency } from "@/helpers/formatter";
 import styled, { css, keyframes } from "styled-components";
-import { House } from "../model/house";
-import device from "../helpers/device";
+import { House } from "@/model/house";
+import device from "@/helpers/device";
 
 type Props = {
   houses: House[];
