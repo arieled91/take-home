@@ -1,0 +1,75 @@
+{
+  "houses": [
+    {
+      "id": 990,
+      "address": "152 Big Rock Cove Ave. Goldsboro, NC 27530",
+      "homeowner": "Alesha Holt",
+      "price": 293778,
+      "photoURL": "https://image.shutterstock.com/image-photo/big-custom-made-luxury-house-260nw-374099713.jpg"
+    },
+    {
+      "id": 991,
+      "address": "974 Front Ave. Dearborn Heights, MI 48127",
+      "homeowner": "Marvin Ewing",
+      "price": 239211,
+      "photoURL": "https://media-cdn.tripadvisor.com/media/photo-s/09/7c/a2/1f/patagonia-hostel.jpg"
+    },
+    {
+      "id": 992,
+      "address": "9748 Creekside St. Stafford, VA 22554",
+      "homeowner": "Mitchell Davies",
+      "price": 156476,
+      "photoURL": "https://images.adsttc.com/media/images/5e5e/da62/6ee6/7e7b/b200/00e2/medium_jpg/_fi.jpg"
+    },
+    {
+      "id": 993,
+      "address": "519 W. Howard Ave. Paramus, NJ 07652",
+      "homeowner": "Kyran Weaver",
+      "price": 211954,
+      "photoURL": "https://image.shutterstock.com/image-photo/traditional-english-semidetached-house-260nw-231369511.jpg"
+    },
+    {
+      "id": 994,
+      "address": "9568 South Wayne St. Oklahoma City, OK 73112",
+      "homeowner": "Osman Tapia",
+      "price": 157325,
+      "photoURL": "https://image.shutterstock.com/image-photo/big-custom-made-luxury-house-260nw-374099713.jpg"
+    },
+    {
+      "id": 995,
+      "address": "38 Hillside Ave. Copperas Cove, TX 76522",
+      "homeowner": "Paolo Wilkins",
+      "price": 150286,
+      "photoURL": "https://image.shutterstock.com/image-photo/houses-built-circa-1960-on-260nw-177959672.jpg"
+    },
+    {
+      "id": 996,
+      "address": "7219 Tanglewood Drive Elizabethtown, PA 17022",
+      "homeowner": "Josef Osborne",
+      "price": 185575,
+      "photoURL": "https://i.pinimg.com/originals/47/b9/7e/47b97e62ef6f28ea4ae2861e01def86c.jpg"
+    },
+    {
+      "id": 997,
+      "address": "14 Orchard Road Clarksburg, WV 26301",
+      "homeowner": "Haydn Cannon",
+      "price": 243369,
+      "photoURL": "https://i.pinimg.com/originals/47/b9/7e/47b97e62ef6f28ea4ae2861e01def86c.jpg"
+    },
+    {
+      "id": 998,
+      "address": "8101 Chestnut Street Lexington, NC 27292",
+      "homeowner": "Kerri Nieves",
+      "price": 119202,
+      "photoURL": "https://image.shutterstock.com/image-photo/houses-built-circa-1960-on-260nw-177959672.jpg"
+    },
+    {
+      "id": 999,
+      "address": "177 North Rd. Falls Church, VA 22041",
+      "homeowner": "Stan Hunt",
+      "price": 178265,
+      "photoURL": "https://image.shutterstock.com/image-photo/big-custom-made-luxury-house-260nw-374099713.jpg"
+    }
+  ],
+  "ok": true
+}

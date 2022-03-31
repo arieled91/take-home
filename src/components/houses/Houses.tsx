@@ -24,7 +24,7 @@ type Props = {
 const Houses = ({ houses, loading = false, hasMore }: Props) => {
   return (
     <div>
-      <HouseList>
+      <HouseList data-testid="house-list">
         {houses?.map((house) => (
           <HouseItem key={house.id}>
             <Image
