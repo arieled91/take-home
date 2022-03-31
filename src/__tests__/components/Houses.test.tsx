@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Houses from "@/components/Houses";
+import Houses from "@/components/houses/Houses";
 import { mockHouses } from "@/__tests__/__mocks__/houses";
 import { currency } from "@/helpers/formatter";
 

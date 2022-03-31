@@ -10,6 +10,7 @@ const useInfiniteScroll = <Item>(
   const [pages, setPages] = useState<number[]>([]);
   const [fetching, setFetching] = useState(true);
   const [items, setItems] = useState<Item[]>([]);
+  const [hasMore, setHasMore] = useState(true);
 
   const onNewPage = () => setCurrentPage((prev) => prev + 1);
   const { loaderRef } = useIntersectionObserver(onNewPage, fetching);
@@ -19,25 +20,31 @@ const useInfiniteScroll = <Item>(
   useEffect(() => {
     const addItems = (newItems: Item[]) => {
       if (isMounted()) {
-        setItems((prevItems) => [...prevItems, ...newItems]);
-        setPages((prevPages) => [...prevPages, currentPage]);
+        if (newItems.length > 0) {
+          setItems((prevItems) => [...prevItems, ...newItems]);
+          setPages((prevPages) => [...prevPages, currentPage]);
+          setHasMore(true);
+        } else {
+          setHasMore(false);
+        }
       }
     };
 
-    if (!pages.includes(currentPage)) {
+    if (!pages.includes(currentPage) && hasMore) {
       setFetching(true);
       fetchCallback(currentPage)
         .then(addItems)
         .catch((e) => console.error(e))
         .finally(() => isMounted() && setFetching(false));
     }
-  }, [currentPage, fetchCallback, isMounted, pages]);
+  }, [currentPage, fetchCallback, hasMore, isMounted, pages]);
 
   return {
     page: currentPage,
     fetching,
     loaderRef,
     items,
+    hasMore,
   };
 };
 
