@@ -1,19 +1,9 @@
 import { render } from "@testing-library/react";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
-beforeEach(() => {
-  // IntersectionObserver isn't available in test environment
-  const mockIntersectionObserver = jest.fn();
-  mockIntersectionObserver.mockReturnValue({
-    observe: () => null,
-    unobserve: () => null,
-  });
-  window.IntersectionObserver = mockIntersectionObserver;
-});
-
 describe("useIntersectionObserver hook", () => {
-  it("works", () => {
-    const onNewPage = jest.fn();
+  it("observes", () => {
+    const onLoad = jest.fn();
     const observe = jest.fn();
     const unobserve = jest.fn();
 
@@ -23,11 +13,41 @@ describe("useIntersectionObserver hook", () => {
     });
 
     const TestComponent = () => {
-      const { loaderRef } = useIntersectionObserver(onNewPage, false);
+      const { loaderRef } = useIntersectionObserver(onLoad, false);
+      return <div ref={loaderRef}>hello world</div>;
+    };
+
+    const { unmount } = render(<TestComponent />);
+    unmount();
+
+    expect(observe).toHaveBeenCalledTimes(1);
+    expect(unobserve).toHaveBeenCalledTimes(1);
+  });
+
+  it("runs callback", () => {
+    jest.useFakeTimers();
+    const onLoad = jest.fn();
+    const observe = jest.fn();
+    const unobserve = jest.fn();
+
+    const intersectionObserver = (window.IntersectionObserver = jest
+      .fn()
+      .mockReturnValue({
+        observe,
+        unobserve,
+      }));
+
+    const TestComponent = () => {
+      const { loaderRef } = useIntersectionObserver(onLoad, false);
       return <div ref={loaderRef}>hello world</div>;
     };
 
     render(<TestComponent />);
-    expect(observe).toHaveBeenCalled();
+
+    const [callback] = intersectionObserver.mock.calls[0];
+    callback([{ isIntersecting: true }]);
+    jest.runOnlyPendingTimers();
+
+    expect(onLoad).toHaveBeenCalledTimes(1);
   });
 });
