@@ -49,7 +49,7 @@ const Houses = ({ houses, loading = false, hasMore }: Props) => {
       {!hasMore && (
         <MessageContainer>
           <InfoMessage>
-            He couldn&apos;t find more houses. Please come back soon!
+            We couldn&apos;t find more houses. Please come back soon!
           </InfoMessage>
         </MessageContainer>
       )}
