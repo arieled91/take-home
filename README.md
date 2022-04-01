@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Take Home
+A simple web app that displays an infinite scrolling of house data.
+
+### Project
+- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+- **Requirements:** [Node.js 12.22.0](https://nodejs.org/) or later
 
 ## Getting Started
 
-First, run the development server:
+1. Install project dependencies:
+    ```bash
+    npm install
+    ```
 
+2. Run **development** server:
+    ```bash
+    npm run dev
+    ```
+
+3. Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+\
+**Note**: the `start` script is not used for development, like in *Create React App*, use `dev` instead.
+
+## Test
+
+### Unit Test
+
+For unit tests the project uses [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+
+- They are in ```src/__tests__``` folder
+- Main folder structure is replicated inside tests folder.
+- File names should be like ```*.test.ts``` or ```*.test.tsx```
+- Non-test files are in ```src/__tests__/__mocks__``` folder
+
+Run **unit tests**:
 ```bash
-npm run dev
-# or
-yarn dev
+npm run test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### End-to-end
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For e2e tests the project uses [Cypress](https://www.cypress.io/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- They are in ```cypress/integration``` folder
+- File names should be like ```*.spec.ts``` or ```*.spec.tsx```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Run **e2e tests**:
+    ```bash
+    npm run e2e
+    ```
 
-## Learn More
+Run **e2e tests** with headless browser:
+    ```bash
+    npm run e2e:headless
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+## Production Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Build the application for production usage:
+    ```bash
+    npm run build
+    ```
+2. Start production server:
+    ```bash
+    npm run start
+    ```
