@@ -23,7 +23,7 @@ A simple web app that displays an infinite scrolling of house data.
 3. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
 \
-**Note**: the `start` script is not used for development, like in *Create React App*, use `dev` instead.
+**Note**: the `start` script is not used for development, like in *Create React App*. Use `dev` instead.
 
 ## Test
 
