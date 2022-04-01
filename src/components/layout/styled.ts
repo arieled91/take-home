@@ -28,3 +28,10 @@ export const Logo = styled.div`
   width: 120px;
   filter: invert(100%) brightness(120%);
 `;
+
+export const GithubButton = styled.a`
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 20px;
+`;
