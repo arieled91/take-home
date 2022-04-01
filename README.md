@@ -49,19 +49,19 @@ For e2e tests the project uses [Cypress](https://www.cypress.io/)
 - File names should be like ```*.spec.ts``` or ```*.spec.tsx```
 
 Run **e2e tests**:
-    ```bash
-    npm run e2e
-    ```
+```bash
+npm run e2e
+```
 
 Run **e2e tests** with headless browser:
-    ```bash
-    npm run e2e:headless
-    ```
+```bash
+npm run e2e:headless
+```
 
 ## Production Server
 
 1. Build the application for production usage:
-    ```bash
+   ```bash
     npm run build
     ```
 2. Start production server:
