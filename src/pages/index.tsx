@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import { PageWithLayout } from "@/model/app";
 import Houses from "../components/houses/Houses";
 import { fetchHouses } from "@/services/houses.service";
+import AppHead from "@/components/layout/AppHead";
 
 const Page: PageWithLayout = () => {
   const {
@@ -14,6 +15,7 @@ const Page: PageWithLayout = () => {
 
   return (
     <div>
+      <AppHead>Take Home</AppHead>
       <Houses houses={houses} loading={fetching} hasMore={hasMore} />
       <div ref={loaderRef} />
     </div>
